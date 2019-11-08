@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
 
-import Form from './components/From'
+import Form from './components/BaseTemplate'
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <Form />
+      <Form helloString={"hello world111"} />
     </div>
   );
 }
