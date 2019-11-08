@@ -5,6 +5,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import './tab.scss'
 
 import OrderPage from '../page/Order'
 
@@ -45,13 +46,17 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   tabBar: {
     backgroundColor: '#20262E',
-    fontSize: '12px'
+    fontSize: '12px',
+    height: '45px'
+  },
+  tabItem: {
+    padding: 0
   },
   tabBody: {
     height: 'calc(100vh - 60px)',
     overflowX: 'hidden',
     overflowY: 'scroll'
-  }
+  },
 }));
 
 export default function SimpleTabs() {
@@ -72,9 +77,9 @@ export default function SimpleTabs() {
           variant="fullWidth"
           className={classes.tabBar}
         >
-          <Tab label="待安装订单(2个)" {...a11yProps(0)} />
-          <Tab label="正在安装(1个)" {...a11yProps(1)} />
-          <Tab label="已安装记录" {...a11yProps(2)} />
+          <Tab label="待安装订单(2个)" {...a11yProps(0)} className={classes.tabItem} />
+          <Tab label="正在安装(1个)" {...a11yProps(1)} className={classes.tabItem} />
+          <Tab label="已安装记录" {...a11yProps(2)} className={classes.tabItem} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
