@@ -6,6 +6,8 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
+import OrderPage from '../page/Order'
+
 interface TabPanelProps {
   children?: React.ReactNode;
   index: any;
@@ -41,6 +43,15 @@ const useStyles = makeStyles((theme: Theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
   },
+  tabBar: {
+    backgroundColor: '#20262E',
+    fontSize: '12px'
+  },
+  tabBody: {
+    height: 'calc(100vh - 60px)',
+    overflowX: 'hidden',
+    overflowY: 'scroll'
+  }
 }));
 
 export default function SimpleTabs() {
@@ -59,6 +70,7 @@ export default function SimpleTabs() {
           onChange={handleChange}
           aria-label="simple tabs example"
           variant="fullWidth"
+          className={classes.tabBar}
         >
           <Tab label="待安装订单(2个)" {...a11yProps(0)} />
           <Tab label="正在安装(1个)" {...a11yProps(1)} />
@@ -66,7 +78,7 @@ export default function SimpleTabs() {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        Item One
+        <OrderPage />
       </TabPanel>
       <TabPanel value={value} index={1}>
         Item Two

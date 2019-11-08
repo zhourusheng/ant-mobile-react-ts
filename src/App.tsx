@@ -1,15 +1,16 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 
-// import Form from './components/BaseTemplate'
 import SimpleTabs from './components/Tabs'
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      {/* <Form helloString={"hello world111"} /> */}
-      <SimpleTabs />
-    </div>
+    <Router>
+      <div>
+        <Route path="/" exact component={SimpleTabs}></Route>
+      </div>
+    </Router>
   );
 }
 
