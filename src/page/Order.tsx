@@ -1,32 +1,38 @@
 import React from 'react';
-// import propTypes from 'prop-types'
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
 
-import SimpleCard from '../components/Card'
-
-export interface OrderPageProps {
-  // helloString? : string
+export interface ItemProps {
+  index: string
 }
 
-class OrderPage extends React.Component<OrderPageProps, any> {
-  // static propType = {
-  //   helloString: propTypes.string
-  // }
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      width: '100%',
+      height: 400,
+      maxWidth: 360,
+      backgroundColor: theme.palette.background.paper,
+    },
+  }),
+);
 
-  // constructor(props: any) {
-  //   super(props)
-  // }
-
-  render() {
-    return(
-      <div>
-        <SimpleCard />
-        <SimpleCard/>
-        <SimpleCard />
-        <SimpleCard />
-      </div>
-    )
-  }
-
+function renderRow(props: ItemProps) {
+  const { index} = props;
+  return (
+    <ListItem button key={index}>
+      <ListItemText primary={`Item ${index + 1}`} />
+    </ListItem>
+  );
 }
 
-export default OrderPage;
+export default function VirtualizedList() {
+  const classes = useStyles();
+
+  return (
+    <div className={classes.root}>
+        {renderRow}
+    </div>
+  );
+}
