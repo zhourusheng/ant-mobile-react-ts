@@ -11,7 +11,12 @@ class NavBarPage extends React.Component<PageProps, any> {
   render() {
     return (
       <div>
-       <NavBar>title</NavBar>
+       <NavBar
+        mode="dark"
+        leftContent="Back"
+        rightContent="Right"
+        onLeftClick={() => console.log('onLeftClick')}
+       >导航栏</NavBar>
       </div>
     )
   }
