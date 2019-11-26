@@ -16,6 +16,7 @@ class indexPage extends React.Component<PageProps, any> {
     return(
       <div>
         <Link to="/navBar">navBar</Link>
+        <Link to="/learn">learn</Link>
       </div>
     )
   }
