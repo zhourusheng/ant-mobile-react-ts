@@ -1,20 +1,20 @@
 import React from 'react'
-import { Button } from 'antd'
-import propTypes from 'prop-types'
+// import propTypes from 'prop-types'
+
+import { HelloOld, Hello } from './components/Func'
 
 export interface FormProps {
-  helloString? : string
 }
 
 class Form extends React.Component<FormProps, any> {
-  static propType = {
-    helloString: propTypes.string
-  }
+  // static propType = {
+  // }
 
   render() {
     return(
       <div>
-         <Button type="primary">Button</Button>
+        <HelloOld name="周如生" />
+        <Hello name="周如生" />
       </div>
     )
   }
