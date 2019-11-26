@@ -47,7 +47,9 @@ const imageInlineSizeLimit = parseInt(
 const useTypeScript = fs.existsSync(paths.appTsConfig);
 
 // style files regexes
-const cssRegex = /\.css$/;
+// const cssRegex = /\.css$/;
+
+const cssRegex = /\.(css|less)$/;
 const cssModuleRegex = /\.module\.css$/;
 const sassRegex = /\.(scss|sass)$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
@@ -92,6 +94,10 @@ module.exports = function(webpackEnv) {
       },
       {
         loader: require.resolve('css-loader'),
+        options: cssOptions,
+      },
+      {
+        loader: require.resolve('less-loader'),
         options: cssOptions,
       },
       {
@@ -374,6 +380,12 @@ module.exports = function(webpackEnv) {
                 name: 'static/media/[name].[hash:8].[ext]',
               },
             },
+            // {
+            //   test: /\.less/,
+            //   use: ['style-loader', 'css-loader', 'less-loader'],
+            //   exclude: /node_modules/,
+            //   include: path.resolve(__dirname, 'src')
+            // },
             // Process application JS with Babel.
             // The preset includes JSX, Flow, TypeScript, and some ESnext features.
             {

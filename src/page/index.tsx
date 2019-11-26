@@ -1,23 +1,21 @@
 import React from 'react'
-import propTypes from 'prop-types'
+// import propTypes from 'prop-types'
 
+import { Link } from 'react-router-dom'
+
+// eslint-disable-next-line
 export interface PageProps {
-  helloString? : string
 }
 
+// eslint-disable-next-line
 class indexPage extends React.Component<PageProps, any> {
   static propType = {
-    helloString: propTypes.string
-  }
-
-  constructor(props: any) {
-    super(props)
   }
 
   render() {
     return(
       <div>
-        index
+        <Link to="/navBar">navBar</Link>
       </div>
     )
   }

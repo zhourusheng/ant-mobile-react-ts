@@ -4,11 +4,14 @@ import './App.css';
 
 import indexPage from './page'
 
+import NavBar from './page/nav-bar'
+
 const App: React.FC = () => {
   return (
     <Router>
       <div>
         <Route path="/" exact component={indexPage}></Route>
+        <Route path="/navBar" exact component={NavBar}></Route>
       </div>
     </Router>
   );
