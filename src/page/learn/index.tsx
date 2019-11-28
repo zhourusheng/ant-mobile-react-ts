@@ -1,24 +1,42 @@
 import React from 'react'
-// import propTypes from 'prop-types'
 
-import { HelloOld, Hello } from './components/Func'
+// import { HelloOld, Hello } from './components/Func'
+// import HelloClass from './components/Class'
+// import HelloHoc from './components/HOC'
+import HelloHooks from './components/Hook'
 
-import HelloClass from './components/Class'
 
 export interface FormProps {
 }
 
 class Form extends React.Component<FormProps, any> {
-  // static propType = {
-  // }
+
+  state = {
+    isLoading: true
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        isLoading: false
+      })
+    }, 3000)
+  }
 
   render() {
+    // const { isLoading } = this.state
     return(
       <div>
-        <HelloOld name="周如生" />
+        {/* <HelloOld name="周如生" />
         <Hello name="周如生" />
         <div>
           <HelloClass name="周如生" />
+        </div>
+        <div>
+          <HelloHoc loading={isLoading} name="周如生" />
+        </div> */}
+        <div>
+          <HelloHooks name="按钮" />
         </div>
       </div>
     )

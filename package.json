@@ -58,6 +58,8 @@
     "postcss-preset-env": "6.7.0",
     "postcss-px2rem": "^0.3.0",
     "postcss-safe-parser": "4.0.1",
+    "rc-animate": "^2.10.2",
+    "rc-util": "^4.15.7",
     "react": "^16.11.0",
     "react-app-polyfill": "^1.0.4",
     "react-app-rewired": "^2.1.5",
