@@ -1,9 +1,9 @@
 import React from 'react'
 
 // import { HelloOld, Hello } from './components/Func'
-// import HelloClass from './components/Class'
+import HelloClass from './components/Class'
 // import HelloHoc from './components/HOC'
-import HelloHooks from './components/Hook'
+// import HelloHooks from './components/Hook'
 
 
 export interface FormProps {
@@ -28,16 +28,16 @@ class Form extends React.Component<FormProps, any> {
     return(
       <div>
         {/* <HelloOld name="周如生" />
-        <Hello name="周如生" />
+        <Hello name="周如生" /> */}
         <div>
-          <HelloClass name="周如生" />
+          <HelloClass name="Button" />
         </div>
-        <div>
+        {/* <div>
           <HelloHoc loading={isLoading} name="周如生" />
         </div> */}
-        <div>
+        {/* <div>
           <HelloHooks name="按钮" />
-        </div>
+        </div> */}
       </div>
     )
   }

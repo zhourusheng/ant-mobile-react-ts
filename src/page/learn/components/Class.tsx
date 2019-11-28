@@ -26,6 +26,18 @@ class HelloClass extends React.Component<Greeting, State> {
     lastName: ''
   }
 
+  // 事件绑定
+  handleClick = (e: React.MouseEvent) =>{
+    e.persist()
+    console.log(e)
+    const { count } = this.state
+    this.setState({ count: count + 1 })
+  }
+
+  handleInput = (e: React.FormEvent<HTMLInputElement>) => {
+    console.log(e.currentTarget.value)
+  }
+
   render() {
     const { count } = this.state
     const { name } = this.props
@@ -33,8 +45,9 @@ class HelloClass extends React.Component<Greeting, State> {
       <Fragment>
         <p>点击了{count}次</p>
         <Button
-          onClick={() => this.setState({ count: count + 1 })}
-        >Class~~{name}</Button>
+          onClick={this.handleClick}
+        >Hello{name}Class</Button>
+        <input type="text" onChange={this.handleInput} />
       </Fragment>
     )
   }
